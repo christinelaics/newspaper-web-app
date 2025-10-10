@@ -3,7 +3,7 @@
 A Newspaper-style web application that fetches real-time articles from NewsAPI.org,
 designed to simulate a real online news portal and built using.
 
-Build using:
+Built using:
 - Frontend: Vite + React + Typescript
 - Backend: Express + Axios + Cors + Dotenv
 
