@@ -1,10 +1,14 @@
 import ArticleCard from "./ArticleCard"
-import { mockArticles } from "../data/mockNews"
+import type { Article } from "../types/types"
 
-export default function ArticleList() {
+interface ArticleListProps {
+    articles: Article[]
+}
+
+export default function ArticleList({articles}: ArticleListProps) {
     return(
         <div>
-            {mockArticles.map((article, index) => (
+            {articles.map((article, index) => (
                 <ArticleCard key={index} article={article}/>
             ))}
         </div>
