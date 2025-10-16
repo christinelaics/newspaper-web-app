@@ -16,14 +16,15 @@ app.get("/api/health", (req, res) => {
 
 app.get("/api/top-headlines", async (req, res) => {
     try {
-        const { category, pageSize=10, page = 1} = req.query;
+        const { sources, category, pageSize=10, page = 1} = req.query;
 
         const params = {
             apiKey: NEWS_API_KEY,
             country: "us",
             pageSize,
             page,
-            ...(category && {category})
+            ...(category && {category}),
+            ...(sources && {sources})
         }
         const response = await axios.get(`${BASE_URL}/top-headlines`, {params});
         res.json(response.data);

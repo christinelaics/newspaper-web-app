@@ -5,7 +5,7 @@ interface NavbarProps {
 }
 export default function Navbar({categories, onSelectCategory}: NavbarProps) {
     return (
-        <nav>
+        <nav className="mb-4 mx-auto">
             {categories.map((category) => (
                 <button
                 key={category}

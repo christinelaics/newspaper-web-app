@@ -1,7 +1,11 @@
 export interface Article {
+    source: {name: string},
+    author: string
     title: string,
     description: string,
-    publishedAt: string,
-    source: {name: string}
+    url: string,
     urlToImage: string
+    publishedAt: string,
+    content: string
+    
 }

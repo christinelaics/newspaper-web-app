@@ -3,9 +3,11 @@ import ArticleList from "./components/ArticleList";
 import Header from "./components/Header";
 import useFetchNews from "./hooks/useFetchNews";
 import { useState } from "react";
+import type { Article } from "./types/types";
+import ArticleContent from "./components/ArticleContent";
 
 export default function App() {
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("general");
   const {articles, loading, error} = useFetchNews(category);
   
   const categories = [
@@ -23,10 +25,14 @@ export default function App() {
   }
 
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Header />
       <Navbar categories={categories} onSelectCategory={setCategory} />
-      <ArticleList articles={articles} />
+      <main className="flex-1 container mx-auto p-4">
+        <ArticleList articles={articles} />
+      </main>
+      
+      
     </div>
   );
 }
