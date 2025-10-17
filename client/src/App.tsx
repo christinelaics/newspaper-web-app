@@ -36,7 +36,10 @@ export default function App() {
   return (
     <div className="flex flex-col min-h-screen p-10 text-stone-700">
       <Header />
-      <Navbar categories={categories} onSelectCategory={setCategory} onSearch={setKeyword} />
+      <Navbar categories={categories} onSelectCategory={((category) => {
+        setKeyword("")
+        setCategory(category)
+      })} onSearch={setKeyword} />
       <main className="mx-auto">
         <ArticleList articles={articles} />
       </main>
