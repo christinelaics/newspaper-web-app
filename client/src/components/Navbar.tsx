@@ -3,17 +3,28 @@ import { useState } from "react";
 interface NavbarProps {
   categories: string[]; // array of category names
   onSelectCategory: (category: string) => void; // callback to notify parent of selected category
+  onSearch: (keyword: string) => void;
 }
 
-export default function Navbar({ categories, onSelectCategory }: NavbarProps) {
+export default function Navbar({ categories, onSelectCategory, onSearch }: NavbarProps) {
   const [showSearch, setShowSearch] = useState(false); // toggle state for search input visibility
+  const [searchedTerm, setSearchedTerm] = useState("");
+  const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+        const trimmed = searchedTerm.trim();
+        if (trimmed) {
+            onSearch(trimmed)
+            setSearchedTerm("");
+        }
+    }
+  }
 
   return (
     <nav className="border-y-4">
       {/* --- Container for all navbar content --- */}
       <div className="max-w-full flex flex-wrap items-center mx-auto justify-between lg:grid lg:grid-cols-3">
         {/* --- Left side: Search --- */}
-        <div className="flex order-1 w-6/7 lg:order-3 lg:col-span-full lg:max-w-screen-lg lg:mx-auto">
+        <div className="flex order-1 w-4/5 md:w-6/7 lg:order-3 lg:col-span-full lg:max-w-screen-lg lg:mx-auto">
           {/* --- Mobile search input (shown only on mobile) --- */}
           <div className={`w-full lg:border-t lg:border-double ${
               showSearch ? "lg:block" : "lg:hidden"}`}>
@@ -22,6 +33,9 @@ export default function Navbar({ categories, onSelectCategory }: NavbarProps) {
               id="mobile-search-navbar"
               className="bg-transparent block w-full text-md text-gray-900 dark:placeholder-stone-400 border-none py-0 my-0 lg:my-2"
               placeholder="Search article..."
+              value={searchedTerm}
+              onChange={(e) => setSearchedTerm(e.target.value)}
+              onKeyDown={handleSearch}
             />
           </div>
         </div>
