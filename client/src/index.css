@@ -1,1 +1,50 @@
-@import "tailwindcss"
+@import "tailwindcss";
+
+@import "tailwindcss";
+
+body {
+  background-image: url("/parchment1.jpg");
+  background-size: cover;        /* fill the entire viewport */
+  background-position: top;  
+  background-attachment: scroll;  /* stay still while scrolling */
+  background-repeat: no-repeat; 
+}
+
+
+.old-standard-tt {
+  font-family: "Old Standard TT", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.old-standard-tt-bold {
+  font-family: "Old Standard TT", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.old-standard-tt-regular-italic {
+  font-family: "Old Standard TT", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.chonburi {
+  font-family: "Chonburi", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.domine {
+  font-family: "Domine", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+

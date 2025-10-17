@@ -8,7 +8,7 @@ interface UseFetchResults {
     error: string | null
 }
 
-export default function useFetchNews(category: string, page=1, pageSize=20):UseFetchResults {
+export default function useFetchHeadlines(category: string, page=1, pageSize=20):UseFetchResults {
     const [articles, setArticles] = useState<Article[]>([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
