@@ -8,6 +8,8 @@ interface UseFetchProps {
     error: string | null
 }
 
+const BASE_URL = import.meta.env.VITE_API_URL
+
 export function useFetchHeadlines(category: string, page=1, pageSize=20):UseFetchProps {
     const [articles, setArticles] = useState<Article[]>([]);
     const [loading, setLoading] = useState(false);
@@ -20,7 +22,7 @@ export function useFetchHeadlines(category: string, page=1, pageSize=20):UseFetc
         const controller = new AbortController();
 
         axios
-        .get("/api/top-headlines", {
+        .get(`${BASE_URL}/top-headlines`, {
             params: {category, page, pageSize },
             signal: controller.signal,
         })
@@ -60,7 +62,7 @@ export function useFetchSearch(keyword: string, pageSize = 20, page = 1): UseFet
             setError(null)
 
             try {
-                const res = await axios.get("/api/search", {
+                const res = await axios.get(`${BASE_URL}/search`, {
                     params: {q: keyword, pageSize, page},
                     signal: controller.signal,
                 });

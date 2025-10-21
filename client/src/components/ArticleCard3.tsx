@@ -5,9 +5,7 @@ interface CardProps {
 }
 
 export default function ArticleCard3({ article }: CardProps) {
-  const previewContent = article.content
-    ? article.content.slice(0, article.content.lastIndexOf(" ", 190)) + "..."
-    : "No content available";
+
 
   return (
     <div className="py-6 border-b-1 border-stone-700 domine lg:border-none md:grid md:grid-cols-2 md:grid-flow-dense md:gap-5 lg:grid-cols-1">

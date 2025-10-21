@@ -25,10 +25,10 @@ export default function App() {
   ];
 
   {
-    (headlineLoading) && <h1>loading..</h1>;
+    (headlineLoading || searchedLoading) && <h1>loading..</h1>;
   }
   {
-    (headlineError) && <h1>Error: {headlineError}</h1>;
+    (headlineError || searchedError) && <h1>Error: {headlineError}</h1>;
   }
 
   return (
