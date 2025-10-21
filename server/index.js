@@ -16,7 +16,7 @@ app.get("/api/health", (req, res) => {
 
 app.get("/api/top-headlines", async (req, res) => {
     try {
-        const { sources, category, pageSize=10, page = 1} = req.query;
+        const { sources, category, pageSize=20, page = 1} = req.query;
 
         const params = {
             apiKey: NEWS_API_KEY,
