@@ -5,6 +5,7 @@ const axios = require("axios");
 
 const BASE_URL = "http://newsapi.org/v2";
 const NEWS_API_KEY = process.env.NEWS_API_KEY;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 app.use(cors());
@@ -47,4 +48,4 @@ app.get("/api/search", async (req, res) => {
     }
 });
 
-app.listen(3000, () => console.log("sever running on http://localhost:3000"));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

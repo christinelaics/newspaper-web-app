@@ -2,8 +2,6 @@ import Navbar from "./components/Navbar";
 import ArticleList from "./components/ArticleList";
 import Header from "./components/Header";
 import { useState } from "react";
-import type { Article } from "./types/types";
-import ArticleContent from "./components/ArticleContent";
 import { useFetchHeadlines, useFetchSearch } from "./hooks/useFetchNews";
 
 export default function App() {
