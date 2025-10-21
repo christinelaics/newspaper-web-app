@@ -18,7 +18,7 @@ Build a responsive newspaper-style web application that displays live news artic
 - Display Articles with title and description
 - Navigate to different categories
 - search bar for article search
-- view of full articles
+- link to full article
 - responsive layout
 
 ### Tech Stack: Layer + Technology
