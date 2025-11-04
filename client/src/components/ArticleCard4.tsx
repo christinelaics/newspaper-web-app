@@ -6,9 +6,9 @@ interface CardProps {
 
 export default function ArticleCard4({ article }: CardProps) {
   const descriptionTrimmed =
-    (article.description !== null && article.description.length > 190) 
-      ? article.description.slice(0, article.description.lastIndexOf(" ", 190)) + "..."
-      : "No content available";
+  article?.content && article?.description && article.description.length > 190
+    ? article.content.slice(0, article.content.lastIndexOf(" ", 190)) + "..."
+    : article?.content || "No content available";
   return (
     <div className="py-6 border-b-1 border-stone-700 domine lg:border-none md:grid md:grid-cols-2 md:grid-flow-dense md:gap-5">
       <img
