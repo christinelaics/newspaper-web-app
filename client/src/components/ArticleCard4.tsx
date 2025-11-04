@@ -6,7 +6,7 @@ interface CardProps {
 
 export default function ArticleCard4({ article }: CardProps) {
   const descriptionTrimmed =
-    article.description.length > 190
+    (article.description !== null && article.description.length > 190) 
       ? article.description.slice(0, article.description.lastIndexOf(" ", 190)) + "..."
       : "No content available";
   return (
