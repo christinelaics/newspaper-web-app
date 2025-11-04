@@ -25,7 +25,7 @@ export default function FeaturedCard({ article }: CardProps) {
           {article.title.split("- ")[0]}
         </h3>
       </a>
-        <p className="pb-4 text-stone-600 hidden lg:block lg:text-sm lg:pb-2">{article.description}</p>
+        <p className="pb-4 text-stone-600 hidden lg:block lg:text-sm lg:pb-2">{descriptionTrimmed}</p>
         {/* <p className="font-light text-sm">{previewContent}</p> */}
         <div className="flex font-light text-stone-500 text-sm">
           <p className="pr-1 font-light text-stone-500">
