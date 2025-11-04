@@ -24,7 +24,6 @@ export default function ArticleCard3({ article }: CardProps) {
         <p className="pb-4 text-stone-600 hidden">
           {article.description}
         </p>
-        {/* <p className="font-light text-sm">{previewContent}</p> */}
         <div className="flex font-light text-stone-500 text-sm">
           <p className="pr-1 font-light text-stone-500">
             {article.publishedAt.split("T")[0]}

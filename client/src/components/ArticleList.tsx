@@ -93,10 +93,5 @@ export default function ArticleList({ articles }: ArticleListProps) {
         ))}
       </div>
     </section>
-    // <div>
-    //     {articlesWithImages.map((article, index) => (
-    //         <ArticleCard key={index} article={article}/>
-    //     ))}
-    // </div>
   );
 }

@@ -5,10 +5,7 @@ interface CardProps {
 }
 
 export default function ArticleCard4({ article }: CardProps) {
-  const descriptionTrimmed =
-  article?.content && article?.description && article.description.length > 190
-    ? article.content.slice(0, article.content.lastIndexOf(" ", 190)) + "..."
-    : article?.content || "No content available";
+
   return (
     <div className="py-6 border-b-1 border-stone-700 domine lg:border-none md:grid md:grid-cols-2 md:grid-flow-dense md:gap-5">
       <img
@@ -26,9 +23,8 @@ export default function ArticleCard4({ article }: CardProps) {
 
       <div className="pb-4 lg:order-3">
         <p className="pb-4 text-stone-600 hidden lg:block lg:text-sm lg:pb-2">
-          {descriptionTrimmed}
+          {article.description}
         </p>
-        {/* <p className="font-light text-sm">{previewContent}</p> */}
         <div className="flex font-light text-stone-500 text-sm">
           <p className="pr-1 font-light text-stone-500">
             {article.publishedAt.split("T")[0]}
